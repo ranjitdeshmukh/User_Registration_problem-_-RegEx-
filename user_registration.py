@@ -52,7 +52,19 @@ def check_email(email):
     except Exception  as e:
         logger.error(str(e)) 
 
-
+def check_mobileNumber(mobile):
+    """This function is used for the validate the user mobile"""
+    try:
+        regex = '^[0-9]{2}[][0-9]{10}$'    
+        if(re.search(regex,mobile)):  
+            print("validte")
+            return True  
+        else:  
+            return None  
+    except ValueError as e:
+        logger.error(str(e))
+    except Exception  as e:
+        logger.error(str(e)) 
 
 if __name__ == '__main__':
     try:
