@@ -66,6 +66,21 @@ def check_mobileNumber(mobile):
     except Exception  as e:
         logger.error(str(e)) 
 
+def check_password(passowrd):    
+    """This function is used for the validate the user password"""
+    try:
+        regex = '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$'    
+        if(re.search(regex,passowrd)):  
+            print("validte")
+            return True  
+        else:  
+            return None  
+    except ValueError as e:
+        logger.error(str(e))
+    except Exception  as e:
+        logger.error(str(e)) 
+
+
 if __name__ == '__main__':
     try:
         user_name = input("Please Provide user_name :")
