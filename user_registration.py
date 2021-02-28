@@ -38,6 +38,21 @@ def Validate_lastName(last_name):
     except Exception  as e:
         logger.error(str(e))
 
+def check_email(email):
+    """This function is used for the validate the user email"""
+    try:
+        regex ="^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.][a-zA-Z]{2,3}){1,2}$"  
+        if(re.search(regex,email)):  
+            print("validte")
+            return True  
+        else:  
+            return None  
+    except ValueError as e:
+        logger.error(str(e))
+    except Exception  as e:
+        logger.error(str(e)) 
+
+
 
 if __name__ == '__main__':
     try:
